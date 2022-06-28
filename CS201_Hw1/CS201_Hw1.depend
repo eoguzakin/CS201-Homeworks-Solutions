@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1647503485 source:c:\users\asus\desktop\c++ codes\cs201_hw1\src\lot.cpp
+	"Lot.h"
+	<iostream>
+
+1647702138 c:\users\asus\desktop\c++ codes\cs201_hw1\include\lot.h
+	"Car.h"
+
+1647878425 source:c:\users\asus\desktop\c++ codes\cs201_hw1\src\main.cpp
+	<iostream>
+	"ParkingSystem.h"
+
+1647707191 c:\users\asus\desktop\c++ codes\cs201_hw1\include\parkingsystem.h
+	"Lot.h"
+	"Car.h"
+
+1647878522 source:c:\users\asus\desktop\c++ codes\cs201_hw1\src\parkingsystem.cpp
+	<iostream>
+	"ParkingSystem.h"
+	"Lot.h"
+	"Car.h"
+
+1647532187 c:\users\asus\desktop\c++ codes\cs201_hw1\include\car.h
+	<string>
+

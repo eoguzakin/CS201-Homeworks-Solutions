@@ -1,0 +1,6 @@
+# ninja log v5
+10	592	6696680831676165	CMakeFiles/CS201_Hw1.dir/src/Car.cpp.obj	aa56937cc15cadd
+8	551	6696680831207516	CMakeFiles/CS201_Hw1.dir/src/ParkingSystem.cpp.obj	cde7a66cd0edac3b
+6	549	6696680831207516	CMakeFiles/CS201_Hw1.dir/src/main.cpp.obj	462d8634949428af
+602	785	6696680833550736	CS201_Hw1.exe	45919b3432c45274
+3	601	6696680831676165	CMakeFiles/CS201_Hw1.dir/src/Lot.cpp.obj	f769167e00784baa

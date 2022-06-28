@@ -1,0 +1,116 @@
+        -:    0:Source:C:/Users/Asus/Desktop/C++ Codes/CS201_Hw1/src/Car.cpp
+        -:    0:Graph:C:\Users\Asus\Desktop\C++ Codes\CS201_Hw1\cmake-build-debug-coverage\CMakeFiles\CS201_Hw1.dir\src\Car.cpp.gcno
+        -:    0:Data:C:\Users\Asus\Desktop\C++ Codes\CS201_Hw1\cmake-build-debug-coverage\CMakeFiles\CS201_Hw1.dir\src\Car.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by Asus on 15.03.2022.
+        -:    3://
+        -:    4:
+        -:    5:#include "Car.h"
+        -:    6:#include <string>
+        -:    7:#include <sstream>
+        -:    8:using namespace std;
+function _ZN3CarC2ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_i called 9 returned 100% blocks executed 57%
+        9:    9:Car::Car(string loc, string typ, int plate){
+        9:    9-block  0
+call    0 returned 9
+call    1 returned 9
+        9:   10:    location = loc;
+call    0 returned 9
+branch  1 taken 9 (fallthrough)
+branch  2 taken 0 (throw)
+        9:   11:    type = typ;
+        9:   11-block  0
+call    0 returned 9
+branch  1 taken 9 (fallthrough)
+branch  2 taken 0 (throw)
+        9:   12:    plateNum = plate;
+        9:   13:    row = -1;
+        9:   14:    string target = loc.substr(1);
+        9:   14-block  0
+call    0 returned 9
+branch  1 taken 9 (fallthrough)
+branch  2 taken 0 (throw)
+        9:   15:    istringstream(target) >> col;
+        9:   15-block  0
+call    0 returned 9
+branch  1 taken 9 (fallthrough)
+branch  2 taken 0 (throw)
+        9:   15-block  1
+call    3 returned 9
+branch  4 taken 9 (fallthrough)
+branch  5 taken 0 (throw)
+        9:   15-block  2
+call    6 returned 9
+    $$$$$:   15-block  3
+call    7 never executed
+    $$$$$:   15-block  4
+        9:   16:    col--;
+        9:   17:    row = (int)(loc[0]) - 65;
+call    0 returned 9
+branch  1 taken 9 (fallthrough)
+branch  2 taken 0 (throw)
+        9:   18:}
+        9:   18-block  0
+call    0 returned 9
+    $$$$$:   18-block  1
+call    1 never executed
+    $$$$$:   18-block  2
+call    2 never executed
+    $$$$$:   18-block  3
+call    3 never executed
+function _ZN3CarD2Ev called 13 returned 100% blocks executed 100%
+       13:   19:Car::~Car() {
+       13:   20:}
+       13:   20-block  0
+call    0 returned 13
+call    1 returned 13
+function _ZN3Car11getLocationB5cxx11Ev called 14 returned 100% blocks executed 100%
+       14:   21:string Car::getLocation(){
+       14:   22:    return location;
+       14:   22-block  0
+call    0 returned 14
+        -:   23:}
+function _ZN3Car7getTypeB5cxx11Ev called 741 returned 100% blocks executed 100%
+      741:   24:string Car::getType(){
+      741:   25:    return type;
+      741:   25-block  0
+call    0 returned 741
+        -:   26:}
+function _ZN3Car11getPlateNumEv called 111 returned 100% blocks executed 100%
+      111:   27:int Car::getPlateNum(){
+      111:   28:    return plateNum;
+      111:   28-block  0
+        -:   29:}
+function _ZN3Car6getRowEv called 720 returned 100% blocks executed 100%
+      720:   30:int Car::getRow() {
+      720:   31:    return row;
+      720:   31-block  0
+        -:   32:}
+function _ZN3Car6getColEv called 79 returned 100% blocks executed 100%
+       79:   33:int Car::getCol() {
+       79:   34:    return col;
+       79:   34-block  0
+        -:   35:}
+function _ZN3Car11setLocationENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 1 returned 100% blocks executed 100%
+        1:   36:void Car::setLocation(string loc){
+        1:   37:    location = loc;
+        1:   37-block  0
+call    0 returned 1
+        -:   38:    //doesnt come here, cant assign the passed to loc to this one for last car
+        1:   39:}
+function _ZN3Car7setTypeENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 1 returned 100% blocks executed 100%
+        1:   40:void Car::setType(string typ){
+        1:   41:    type = typ;
+        1:   41-block  0
+call    0 returned 1
+        1:   42:}
+function _ZN3Car11setPlateNumEi called 1 returned 100% blocks executed 100%
+        1:   43:void Car::setPlateNum(int plate){
+        1:   44:    plateNum = plate;
+        1:   45:}
+function _ZN3Car8isUniqueEi called 0 returned 0% blocks executed 0%
+    #####:   46:bool Car::isUnique(int plat){
+    #####:   47:    return plat == plateNum;
+    %%%%%:   47-block  0
+        -:   48:}

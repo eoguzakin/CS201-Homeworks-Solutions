@@ -1,0 +1,586 @@
+        -:    0:Source:C:/Users/Asus/Desktop/C++ Codes/CS201_Hw1/src/ParkingSystem.cpp
+        -:    0:Graph:C:\Users\Asus\Desktop\C++ Codes\CS201_Hw1\cmake-build-debug-coverage\CMakeFiles\CS201_Hw1.dir\src\ParkingSystem.cpp.gcno
+        -:    0:Data:C:\Users\Asus\Desktop\C++ Codes\CS201_Hw1\cmake-build-debug-coverage\CMakeFiles\CS201_Hw1.dir\src\ParkingSystem.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include <iostream>
+        -:    2:using namespace std;
+        -:    3:#include "ParkingSystem.h"
+        -:    4:#include "Lot.h"
+        -:    5:#include "Car.h"
+function _ZN13ParkingSystemC2Ev called 1 returned 100% blocks executed 100%
+        1:    6:ParkingSystem::ParkingSystem(){
+        1:    7:    lotsArraySize = 0;
+        1:    8:    lotsArray = NULL;
+        1:    9:}
+function _ZN13ParkingSystemD2Ev called 1 returned 100% blocks executed 100%
+        1:   10:ParkingSystem::~ParkingSystem(){
+        -:   11:    //dtor
+        4:   12:    while(lotsArraySize > 0){
+        1:   12-block  0
+        4:   12-block  1
+branch  0 taken 3
+branch  1 taken 1 (fallthrough)
+        3:   13:        removeLot((*lotsArray[lotsArraySize-1]).getId());
+        3:   13-block  0
+call    0 returned 3
+call    1 returned 3
+        -:   14:    }
+        1:   15:}
+function _ZN13ParkingSystem13removeAllLotsEv called 0 returned 0% blocks executed 0%
+    #####:   16:void ParkingSystem::removeAllLots(){
+    #####:   17:    for(int i = lotsArraySize; i > -1; i--){
+    %%%%%:   17-block  0
+    %%%%%:   17-block  1
+branch  0 never executed
+branch  1 never executed
+    #####:   18:        removeLot((*lotsArray[i]).getId());
+    %%%%%:   18-block  0
+call    0 never executed
+call    1 never executed
+        -:   19:    }
+    #####:   20:}
+function _ZN13ParkingSystem8isUniqueEi called 9 returned 100% blocks executed 100%
+        9:   21:bool ParkingSystem::isUnique(int test_id){
+        9:   22:    bool truth = false;
+       32:   23:    for(int i = 0; i < lotsArraySize; i++){
+        9:   23-block  0
+       32:   23-block  1
+branch  0 taken 23
+branch  1 taken 9 (fallthrough)
+       23:   24:        truth = (*lotsArray[i]).isUnique(test_id);
+       23:   24-block  0
+call    0 returned 23
+        -:   25:    }
+        9:   26:    return truth;
+        9:   26-block  0
+        -:   27:}
+function _ZN13ParkingSystem9createLotEiii called 9 returned 100% blocks executed 94%
+        9:   28:void ParkingSystem::createLot(int id, int rows, int columns){//BUNU ÇÖZ SANA MADALYA
+        9:   29:    if(isUnique(id)){
+        9:   29-block  0
+call    0 returned 9
+branch  1 taken 2 (fallthrough)
+branch  2 taken 7
+        2:   30:        cout<<"Cannot create the parking lot "<< id <<",a lot with this ID already exists" << endl;
+        2:   30-block  0
+call    0 returned 2
+call    1 returned 2
+call    2 returned 2
+call    3 returned 2
+        -:   31:    }
+        7:   32:    else if((rows > 12 || rows == 0) || (columns > 12 || columns == 0)){
+        7:   32-block  0
+branch  0 taken 6 (fallthrough)
+branch  1 taken 1
+        6:   32-block  1
+branch  2 taken 6 (fallthrough)
+branch  3 taken 0
+        6:   32-block  2
+branch  4 taken 6 (fallthrough)
+branch  5 taken 0
+        6:   32-block  3
+branch  6 taken 0 (fallthrough)
+branch  7 taken 6
+        1:   33:        cout<<"Cannot create the parking lot "<< id <<", dimensions exceed acceptable bounds" << endl;
+        1:   33-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+        -:   34:    }
+        -:   35:    else{
+        -:   36:        //if the lot array is empty, we create it and add the lot
+        6:   37:        Lot** tmp = lotsArray;
+       6*:   38:        lotsArray = new Lot*[lotsArraySize+1];
+        6:   38-block  0
+branch  0 taken 6 (fallthrough)
+branch  1 taken 0
+        6:   38-block  1
+    %%%%%:   38-block  2
+call    2 never executed
+        6:   38-block  3
+call    3 returned 6
+       19:   39:        for(int i = 0; i < lotsArraySize; i++){
+       19:   39-block  0
+branch  0 taken 13
+branch  1 taken 6 (fallthrough)
+       13:   40:            lotsArray[i] = tmp[i];
+       13:   40-block  0
+        -:   41:        }/*
+        -:   42:        for(int i = 1; i < lotsArraySize; i++){
+        -:   43:            delete[] tmp[i];
+        -:   44:        }*/
+        6:   45:        delete[] tmp;
+        6:   45-block  0
+branch  0 taken 5 (fallthrough)
+branch  1 taken 1
+        5:   45-block  1
+call    2 returned 5
+        6:   46:        lotsArray[lotsArraySize] = new Lot(id, rows, columns);
+        6:   46-block  0
+call    0 returned 6
+call    1 returned 6
+branch  2 taken 6 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   46-block  1
+call    4 never executed
+        6:   47:        lotsArraySize++;
+        -:   48:        //if the lot is not empty, we transfer its values to a different array with size 1 more
+        -:   49:        //than this. Then we make our lotsArray point to that array
+        6:   50:        cout << "Parking lot with ID " << id << " and dimensions (" << rows << "," << columns << ") has been added to the system" << endl;
+        6:   50-block  0
+call    0 returned 6
+call    1 returned 6
+call    2 returned 6
+call    3 returned 6
+call    4 returned 6
+call    5 returned 6
+call    6 returned 6
+call    7 returned 6
+        -:   51:    }
+        9:   52:}
+        9:   52-block  0
+function _ZN13ParkingSystem9removeLotEi called 7 returned 100% blocks executed 100%
+        7:   53:void ParkingSystem::removeLot(int id){//doesnt work
+        7:   54:    bool inHere = false;
+        7:   55:    int index = -1;
+       30:   56:    for(int i = 0; i < lotsArraySize; i++){
+        7:   56-block  0
+       23:   56-block  1
+       30:   56-block  2
+branch  0 taken 23
+branch  1 taken 7 (fallthrough)
+       23:   57:        if((*lotsArray[i]).getId() == id) {
+       23:   57-block  0
+call    0 returned 23
+branch  1 taken 6 (fallthrough)
+branch  2 taken 17
+        6:   58:            inHere = true;
+        6:   59:            index = i;
+        6:   59-block  0
+        -:   60:        }
+        -:   61:    }
+        7:   62:    if(inHere){
+        7:   62-block  0
+branch  0 taken 6 (fallthrough)
+branch  1 taken 1
+        -:   63:        //we copy everything the next pointer has to previous and delete the last element and --size
+        6:   64:        if((*lotsArray[index]).getCarsSize() == -1){
+        6:   64-block  0
+call    0 returned 6
+branch  1 taken 3 (fallthrough)
+branch  2 taken 3
+        6:   65:            for(int i = index; i < lotsArraySize-1; i++){
+        3:   65-block  0
+        6:   65-block  1
+branch  0 taken 3
+branch  1 taken 3 (fallthrough)
+        3:   66:                (*lotsArray[i]).setCarsArray((*lotsArray[i+1]).getCarsAddress(), (*lotsArray[i+1]).getCarsSize());
+        3:   66-block  0
+call    0 returned 3
+call    1 returned 3
+call    2 returned 3
+        3:   67:                (*lotsArray[i]).setNumOfEmptySpaces((*lotsArray[i+1]).getNumOfEmptySpaces());
+call    0 returned 3
+call    1 returned 3
+        3:   68:                (*lotsArray[i]).setRowNum((*lotsArray[i+1]).getRowNum());
+call    0 returned 3
+call    1 returned 3
+        3:   69:                (*lotsArray[i]).setColumnNum((*lotsArray[i+1]).getColumnNum());
+call    0 returned 3
+call    1 returned 3
+        3:   70:                (*lotsArray[i]).setId((*lotsArray[i+1]).getId());
+call    0 returned 3
+call    1 returned 3
+        -:   71:            }
+        3:   72:            delete lotsArray[lotsArraySize-1];
+        3:   72-block  0
+branch  0 taken 3 (fallthrough)
+branch  1 taken 0
+        3:   72-block  1
+call    2 returned 3
+call    3 returned 3
+        3:   73:            lotsArraySize--;
+        3:   73-block  0
+        -:   74:        }
+        -:   75:        else{
+        -:   76:            //print the remove car for all of them and then remove the lots
+        8:   77:            for(int j = (*lotsArray[index]).getCarsSize()-1; j > -1; j--){
+        3:   77-block  0
+call    0 returned 3
+        8:   77-block  1
+branch  1 taken 5
+branch  2 taken 3 (fallthrough)
+        5:   78:                (*lotsArray[index]).removeCar(j);
+        5:   78-block  0
+call    0 returned 5
+        -:   79:            }
+        9:   80:            for(int i = index; i < lotsArraySize; i++){
+        3:   80-block  0
+        9:   80-block  1
+branch  0 taken 6
+branch  1 taken 3 (fallthrough)
+        6:   81:                lotsArray[i] = lotsArray[i+1];
+        6:   81-block  0
+        -:   82:            }
+        3:   83:            lotsArraySize--;
+        3:   83-block  0
+        -:   84:        }
+        6:   85:        cout << "Lot " << id << " has been successfully removed from the system" << endl;
+        6:   85-block  0
+call    0 returned 6
+call    1 returned 6
+call    2 returned 6
+call    3 returned 6
+        -:   86:    }
+        -:   87:    else{
+        1:   88:        cout << "Lot " << id << " is not in the system" << endl;
+        1:   88-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+        -:   89:    }
+        7:   90:}
+function _ZN13ParkingSystem8listLotsEv called 3 returned 100% blocks executed 100%
+        3:   91:void ParkingSystem::listLots(){
+        3:   92:    if(lotsArraySize == 0)
+        3:   92-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 2
+        1:   93:        cout << "No lots to list" << endl;
+        1:   93-block  0
+call    0 returned 1
+call    1 returned 1
+        -:   94:    else{
+        2:   95:        cout << "List of lots:" << endl;
+        2:   95-block  0
+call    0 returned 2
+call    1 returned 2
+       11:   96:        for(int i = 0; i < lotsArraySize; i++){
+       11:   96-block  0
+branch  0 taken 9
+branch  1 taken 2 (fallthrough)
+        9:   97:            cout << "ID: " << (*lotsArray[i]).getId() << ", Dim: (";
+        9:   97-block  0
+call    0 returned 9
+call    1 returned 9
+call    2 returned 9
+call    3 returned 9
+        9:   98:            cout << (*lotsArray[i]).getRowNum() << "," << (*lotsArray[i]).getColumnNum();
+call    0 returned 9
+call    1 returned 9
+call    2 returned 9
+call    3 returned 9
+call    4 returned 9
+        9:   99:            cout << "), number of empty parking spaces: " << (*lotsArray[i]).getNumOfEmptySpaces() << endl;
+call    0 returned 9
+call    1 returned 9
+call    2 returned 9
+call    3 returned 9
+        -:  100:        }
+        -:  101:    }
+        3:  102:}
+function _ZN13ParkingSystem11lotContentsEi called 4 returned 100% blocks executed 69%
+        4:  103:void ParkingSystem::lotContents(int id){
+        4:  104:    int index = -1;
+       10:  105:    for(int i = 0; i < lotsArraySize; i++){
+        4:  105-block  0
+        6:  105-block  1
+       10:  105-block  2
+branch  0 taken 10
+branch  1 taken 0 (fallthrough)
+       10:  106:        if(id == (*lotsArray[i]).getId()){
+       10:  106-block  0
+call    0 returned 10
+branch  1 taken 4 (fallthrough)
+branch  2 taken 6
+        4:  107:            index = i;
+        4:  108:            break;
+        4:  108-block  0
+        -:  109:        }
+        -:  110:    }
+        4:  111:    if(index != -1){
+        4:  111-block  0
+branch  0 taken 4 (fallthrough)
+branch  1 taken 0
+        4:  112:        (*lotsArray[index]).displayContent();
+        4:  112-block  0
+call    0 returned 4
+        -:  113:    }
+        -:  114:    else{
+    #####:  115:        cout << "Lot " << id << " is not in the system" << endl;
+    %%%%%:  115-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+        -:  116:    }
+        4:  117:}
+function _ZN13ParkingSystem7parkCarEiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_i called 13 returned 100% blocks executed 79%
+       13:  118:void ParkingSystem::parkCar(int lotId, string location, string carType, int plateNumber){
+       13:  119:    bool truth = false;
+       13:  120:    int index = -1;
+       33:  121:    for(int i = 0; i < lotsArraySize; i++){
+       13:  121-block  0
+       20:  121-block  1
+       33:  121-block  2
+branch  0 taken 31
+branch  1 taken 2 (fallthrough)
+       31:  122:        if((*lotsArray[i]).isUnique(lotId)){
+       31:  122-block  0
+call    0 returned 31
+branch  1 taken 11 (fallthrough)
+branch  2 taken 20
+       11:  123:            truth = true;
+       11:  124:            index = i;
+       11:  125:            break;
+       11:  125-block  0
+        -:  126:        }
+        -:  127:    }
+       13:  128:    if(truth){
+       13:  128-block  0
+branch  0 taken 11 (fallthrough)
+branch  1 taken 2
+        -:  129:        //if the lot is existing, we find the lot to park the car
+       11:  130:        (*lotsArray[index]).addCar(location,carType,plateNumber);
+       11:  130-block  0
+call    0 returned 11
+call    1 returned 11
+branch  2 taken 11 (fallthrough)
+branch  3 taken 0 (throw)
+       11:  130-block  1
+call    4 returned 11
+branch  5 taken 11 (fallthrough)
+branch  6 taken 0 (throw)
+       11:  130-block  2
+call    7 returned 11
+call    8 returned 11
+    $$$$$:  130-block  3
+call    9 never executed
+    $$$$$:  130-block  4
+    $$$$$:  130-block  5
+call   10 never executed
+        -:  131:    }
+        -:  132:    else{
+        2:  133:        cout << "Lot " << lotId << " is not in the system" << endl;
+        2:  133-block  0
+call    0 returned 2
+call    1 returned 2
+call    2 returned 2
+call    3 returned 2
+        -:  134:    }
+       13:  135:}
+       13:  135-block  0
+function _ZN13ParkingSystem7findCarEi called 6 returned 100% blocks executed 59%
+        6:  136:void ParkingSystem::findCar(int plateNumber){
+        6:  137:    int indexLot = -1;
+        6:  138:    int indexCar = -1;
+       19:  139:    for(int i = 0; i < lotsArraySize; i++){
+        6:  139-block  0
+       13:  139-block  1
+       19:  139-block  2
+branch  0 taken 17
+branch  1 taken 2 (fallthrough)
+       17:  140:        indexCar = (*lotsArray[i]).checkCar(plateNumber);
+       17:  140-block  0
+call    0 returned 17
+       17:  141:        if(indexCar != -1){
+branch  0 taken 4 (fallthrough)
+branch  1 taken 13
+        4:  142:            indexLot = i;
+        4:  143:            break;
+        4:  143-block  0
+        -:  144:        }
+        -:  145:    }
+        6:  146:    if(indexCar != -1 && indexLot != -1){
+        6:  146-block  0
+branch  0 taken 4 (fallthrough)
+branch  1 taken 2
+        4:  146-block  1
+branch  2 taken 4 (fallthrough)
+branch  3 taken 0
+        4:  147:        Car c = (*lotsArray[indexLot]).getCar(indexCar);
+        4:  147-block  0
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+        4:  148:        if(equal(c.getType().begin(), c.getType().end(),"b")){
+        4:  148-block  0
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+        4:  148-block  1
+call    3 returned 4
+call    4 returned 4
+branch  5 taken 4 (fallthrough)
+branch  6 taken 0 (throw)
+        4:  148-block  2
+call    7 returned 4
+call    8 returned 4
+branch  9 taken 4 (fallthrough)
+branch 10 taken 0 (throw)
+        4:  148-block  3
+call   11 returned 4
+call   12 returned 4
+branch 13 taken 0 (fallthrough)
+branch 14 taken 4
+    $$$$$:  148-block  4
+call   15 never executed
+    $$$$$:  148-block  5
+    $$$$$:  148-block  6
+call   16 never executed
+    $$$$$:  148-block  7
+    #####:  149:            cout<<"Heavy-duty car with plate number " << c.getPlateNum();
+    %%%%%:  149-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  149-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  149-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    #####:  150:            cout<<" is at location " << c.getLocation() << ", lot " << (*lotsArray[indexLot]).getId()<<endl;
+    %%%%%:  150-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  150-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  150-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  150-block  3
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    %%%%%:  150-block  4
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+    %%%%%:  150-block  5
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+    %%%%%:  150-block  6
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+    %%%%%:  150-block  7
+call   21 never executed
+    $$$$$:  150-block  8
+call   22 never executed
+    $$$$$:  150-block  9
+        -:  151:        }
+        -:  152:        else{
+        4:  153:            cout<<"Light-duty car with plate number " << c.getPlateNum();
+        4:  153-block  0
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+        4:  153-block  1
+call    3 returned 4
+branch  4 taken 4 (fallthrough)
+branch  5 taken 0 (throw)
+        4:  153-block  2
+call    6 returned 4
+branch  7 taken 4 (fallthrough)
+branch  8 taken 0 (throw)
+        4:  154:            cout<<" is at location " << c.getLocation() << ", lot " << (*lotsArray[indexLot]).getId()<<endl;
+        4:  154-block  0
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+        4:  154-block  1
+call    3 returned 4
+branch  4 taken 4 (fallthrough)
+branch  5 taken 0 (throw)
+        4:  154-block  2
+call    6 returned 4
+branch  7 taken 4 (fallthrough)
+branch  8 taken 0 (throw)
+        4:  154-block  3
+call    9 returned 4
+branch 10 taken 4 (fallthrough)
+branch 11 taken 0 (throw)
+        4:  154-block  4
+call   12 returned 4
+branch 13 taken 4 (fallthrough)
+branch 14 taken 0 (throw)
+        4:  154-block  5
+call   15 returned 4
+branch 16 taken 4 (fallthrough)
+branch 17 taken 0 (throw)
+        4:  154-block  6
+call   18 returned 4
+branch 19 taken 4 (fallthrough)
+branch 20 taken 0 (throw)
+        4:  154-block  7
+call   21 returned 4
+    $$$$$:  154-block  8
+call   22 never executed
+    $$$$$:  154-block  9
+        -:  155:        }
+        4:  156:    }
+        4:  156-block  0
+call    0 returned 4
+    $$$$$:  156-block  1
+call    1 never executed
+        -:  157:    else{
+        2:  158:        cout<<"The car with number plate " << plateNumber << " is not in the system"<<endl;
+        2:  158-block  0
+call    0 returned 2
+call    1 returned 2
+call    2 returned 2
+call    3 returned 2
+        -:  159:    }
+        6:  160:}
+        6:  160-block  0
+function _ZN13ParkingSystem9removeCarEi called 6 returned 100% blocks executed 100%
+        6:  161:void ParkingSystem::removeCar(int plateNumber){
+        6:  162:    int indexLot = -1;
+        6:  163:    int indexCar = -1;
+       19:  164:    for(int i = 0; i < lotsArraySize; i++){
+        6:  164-block  0
+       13:  164-block  1
+       19:  164-block  2
+branch  0 taken 17
+branch  1 taken 2 (fallthrough)
+       17:  165:        indexCar = (*lotsArray[i]).checkCar(plateNumber);
+       17:  165-block  0
+call    0 returned 17
+       17:  166:        if(indexCar != -1){
+branch  0 taken 4 (fallthrough)
+branch  1 taken 13
+        4:  167:            indexLot = i;
+        4:  168:            break;
+        4:  168-block  0
+        -:  169:        }
+        -:  170:    }
+        6:  171:    if(indexCar != -1 && indexLot != -1){
+        6:  171-block  0
+branch  0 taken 4 (fallthrough)
+branch  1 taken 2
+        4:  171-block  1
+branch  2 taken 4 (fallthrough)
+branch  3 taken 0
+        4:  172:        (*lotsArray[indexLot]).removeCar(indexCar);
+        4:  172-block  0
+call    0 returned 4
+        -:  173:    }
+        -:  174:    else{
+        2:  175:        cout<<"The car with number plate " << plateNumber << " is not in the system"<<endl;
+        2:  175-block  0
+call    0 returned 2
+call    1 returned 2
+call    2 returned 2
+call    3 returned 2
+        -:  176:    }
+        6:  177:}

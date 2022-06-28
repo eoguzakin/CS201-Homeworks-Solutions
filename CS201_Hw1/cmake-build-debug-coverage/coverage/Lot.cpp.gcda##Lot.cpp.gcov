@@ -1,0 +1,1144 @@
+        -:    0:Source:C:/Users/Asus/Desktop/C++ Codes/CS201_Hw1/src/Lot.cpp
+        -:    0:Graph:C:\Users\Asus\Desktop\C++ Codes\CS201_Hw1\cmake-build-debug-coverage\CMakeFiles\CS201_Hw1.dir\src\Lot.cpp.gcno
+        -:    0:Data:C:\Users\Asus\Desktop\C++ Codes\CS201_Hw1\cmake-build-debug-coverage\CMakeFiles\CS201_Hw1.dir\src\Lot.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "Lot.h"
+        -:    2:#include "Car.h"
+        -:    3:#include <iostream>
+        -:    4:#include <string>
+        -:    5:#include <sstream>
+        -:    6:using namespace std;
+function _ZN3LotC2Eiii called 6 returned 100% blocks executed 100%
+        6:    7:Lot::Lot(const int lot_id,const int d1,const int d2)
+        -:    8:{
+        6:    9:    id = lot_id;
+        6:   10:    lotDsize1 = d1;
+        6:   11:    lotDsize2 = d2;
+        6:   12:    emptySpaces = lotDsize1 * lotDsize2;
+        6:   13:    carsSize = -1;
+        6:   14:    cars = NULL;
+        6:   15:}
+function _ZN3LotD2Ev called 3 returned 100% blocks executed 40%
+        3:   16:Lot::~Lot()
+        -:   17:{
+        -:   18:    //dtor
+        3:   19:    if(carsSize > -1){
+        3:   19-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 3
+    #####:   20:        removeAllCars();
+    %%%%%:   20-block  0
+call    0 never executed
+    #####:   21:        delete[] cars;
+branch  0 never executed
+branch  1 never executed
+    %%%%%:   21-block  0
+call    2 never executed
+        -:   22:    }
+        3:   23:}
+function _ZN3Lot13removeAllCarsEv called 0 returned 0% blocks executed 0%
+    #####:   24:void Lot::removeAllCars(){
+    #####:   25:    for(int indexCar = carsSize-1; indexCar > -1; indexCar--){
+    %%%%%:   25-block  0
+    %%%%%:   25-block  1
+    %%%%%:   25-block  2
+branch  0 never executed
+branch  1 never executed
+    #####:   26:        for(int i = indexCar; i < carsSize-1; i++){
+    %%%%%:   26-block  0
+    %%%%%:   26-block  1
+branch  0 never executed
+branch  1 never executed
+    #####:   27:        (*cars[i]).setPlateNum((*cars[i+1]).getPlateNum());
+    %%%%%:   27-block  0
+call    0 never executed
+call    1 never executed
+    #####:   28:        (*cars[i]).setLocation((*cars[i+1]).getLocation());
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   28-block  0
+call    4 never executed
+    $$$$$:   28-block  1
+call    5 never executed
+    $$$$$:   28-block  2
+call    6 never executed
+    #####:   29:        (*cars[i]).setType((*cars[i+1]).getType());
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   29-block  0
+call    4 never executed
+    $$$$$:   29-block  1
+call    5 never executed
+        -:   30:        }
+    #####:   31:        if(carsSize>0){
+    %%%%%:   31-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   32:        delete cars[carsSize-1];
+    %%%%%:   32-block  0
+branch  0 never executed
+branch  1 never executed
+    %%%%%:   32-block  1
+call    2 never executed
+call    3 never executed
+    #####:   33:        carsSize--;
+    %%%%%:   33-block  0
+        -:   34:        }
+        -:   35:    }
+    #####:   36:    carsSize = -1;
+    #####:   37:}
+    %%%%%:   37-block  0
+function _ZN3Lot9removeCarEi called 9 returned 100% blocks executed 82%
+        9:   38:void Lot::removeCar(int indexCar){
+        -:   39:    //we copy everything the next pointer has to previous and delete the last element and --size
+        9:   40:    if(!(*cars[indexCar]).getType().compare("b")){
+        9:   40-block  0
+call    0 returned 9
+call    1 returned 9
+call    2 returned 9
+branch  3 taken 4 (fallthrough)
+branch  4 taken 5
+        4:   41:        cout<<"Heavy-duty car";
+        4:   41-block  0
+call    0 returned 4
+        4:   42:        emptySpaces+=2;
+        -:   43:    }
+        -:   44:    else{
+        5:   45:        cout<<"Light-duty car";
+        5:   45-block  0
+call    0 returned 5
+        5:   46:        emptySpaces++;
+        -:   47:    }
+        9:   48:    cout<<" with number plate " << (*cars[indexCar]).getPlateNum();
+        9:   48-block  0
+call    0 returned 9
+call    1 returned 9
+call    2 returned 9
+        9:   49:    cout<< " car has been removed from slot " << (*cars[indexCar]).getLocation();
+call    0 returned 9
+call    1 returned 9
+call    2 returned 9
+branch  3 taken 9 (fallthrough)
+branch  4 taken 0 (throw)
+        9:   49-block  0
+call    5 returned 9
+    $$$$$:   49-block  1
+call    6 never executed
+    $$$$$:   49-block  2
+call    7 never executed
+        9:   50:    cout<<", lot "<<id<<endl;
+call    0 returned 9
+call    1 returned 9
+call    2 returned 9
+       10:   51:    for(int i = indexCar; i < carsSize-1; i++){
+       10:   51-block  0
+branch  0 taken 1
+branch  1 taken 9 (fallthrough)
+        1:   52:        (*cars[i]).setPlateNum((*cars[i+1]).getPlateNum());
+        1:   52-block  0
+call    0 returned 1
+call    1 returned 1
+        1:   53:        (*cars[i]).setLocation((*cars[i+1]).getLocation());
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   53-block  0
+call    4 returned 1
+    $$$$$:   53-block  1
+call    5 never executed
+    $$$$$:   53-block  2
+call    6 never executed
+        1:   54:        (*cars[i]).setType((*cars[i+1]).getType());
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   54-block  0
+call    4 returned 1
+    $$$$$:   54-block  1
+call    5 never executed
+        -:   55:    }
+        9:   56:    if(carsSize>0){
+        9:   56-block  0
+branch  0 taken 9 (fallthrough)
+branch  1 taken 0
+        9:   57:        delete cars[carsSize-1];
+        9:   57-block  0
+branch  0 taken 9 (fallthrough)
+branch  1 taken 0
+        9:   57-block  1
+call    2 returned 9
+call    3 returned 9
+        9:   58:        carsSize--;
+        9:   58-block  0
+        -:   59:    }
+        9:   60:}
+        9:   60-block  0
+function _ZN3Lot5getIdEv called 52 returned 100% blocks executed 100%
+       52:   61:int Lot::getId(){
+       52:   62:    return id;
+       52:   62-block  0
+        -:   63:}
+function _ZN3Lot19getNumOfEmptySpacesEv called 12 returned 100% blocks executed 100%
+       12:   64:int Lot::getNumOfEmptySpaces(){
+       12:   65:    return emptySpaces;
+       12:   65-block  0
+        -:   66:}
+function _ZN3Lot9getRowNumEv called 12 returned 100% blocks executed 100%
+       12:   67:int Lot::getRowNum(){
+       12:   68:    return lotDsize1;
+       12:   68-block  0
+        -:   69:}
+function _ZN3Lot12getColumnNumEv called 12 returned 100% blocks executed 100%
+       12:   70:int Lot::getColumnNum(){
+       12:   71:    return lotDsize2;
+       12:   71-block  0
+        -:   72:}
+function _ZN3Lot5setIdEi called 3 returned 100% blocks executed 100%
+        3:   73:void Lot::setId(int i){
+        3:   74:    id = i;
+        3:   75:}
+function _ZN3Lot19setNumOfEmptySpacesEi called 3 returned 100% blocks executed 100%
+        3:   76:void Lot::setNumOfEmptySpaces(int es){
+        3:   77:    emptySpaces = es;
+        3:   78:}
+function _ZN3Lot9setRowNumEi called 3 returned 100% blocks executed 100%
+        3:   79:void Lot::setRowNum(int r){
+        3:   80:    lotDsize1 = r;
+        3:   81:}
+function _ZN3Lot12setColumnNumEi called 3 returned 100% blocks executed 100%
+        3:   82:void Lot::setColumnNum(int c){
+        3:   83:    lotDsize2 = c;
+        3:   84:}
+function _ZN3Lot8isUniqueEi called 54 returned 100% blocks executed 100%
+       54:   85:bool Lot::isUnique(int test_id) {
+       54:   86:    return test_id == id;
+       54:   86-block  0
+        -:   87:}
+function _ZN3Lot8checkCarEi called 34 returned 100% blocks executed 100%
+       34:   88:int Lot::checkCar(int plate){
+      104:   89:    for(int i = 0; i < carsSize; i++){
+       34:   89-block  0
+       70:   89-block  1
+      104:   89-block  2
+branch  0 taken 78
+branch  1 taken 26 (fallthrough)
+       78:   90:        if((*cars[i]).getPlateNum() == plate){
+       78:   90-block  0
+call    0 returned 78
+branch  1 taken 8 (fallthrough)
+branch  2 taken 70
+        8:   91:            return i;
+        8:   91-block  0
+        -:   92:        }
+        -:   93:    }
+       26:   94:    return -1;
+       26:   94-block  0
+        -:   95:}
+function _ZN3Lot6getCarEi called 4 returned 100% blocks executed 100%
+        4:   96:Car Lot::getCar(int carindex){
+        4:   97:    return *cars[carindex];
+        4:   97-block  0
+call    0 returned 4
+        -:   98:}
+function _ZN3Lot14getCarsAddressEv called 3 returned 100% blocks executed 100%
+        3:   99:Car** Lot::getCarsAddress(){
+        3:  100:    return cars;
+        3:  100-block  0
+        -:  101:}
+function _ZN3Lot12setCarsArrayEPP3Cari called 3 returned 100% blocks executed 44%
+        3:  102:void Lot::setCarsArray(Car** a, int asize){
+       3*:  103:    for(int i = carsSize; i > -1; i--){
+        3:  103-block  0
+    %%%%%:  103-block  1
+        3:  103-block  2
+branch  0 taken 0
+branch  1 taken 3 (fallthrough)
+    #####:  104:        delete cars[i];
+    %%%%%:  104-block  0
+branch  0 never executed
+branch  1 never executed
+    %%%%%:  104-block  1
+call    2 never executed
+call    3 never executed
+        -:  105:    }
+       3*:  106:    delete[] cars;
+        3:  106-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 3
+    %%%%%:  106-block  1
+call    2 never executed
+        3:  107:    cars = a;
+        3:  108:    carsSize = asize;
+        3:  109:}
+function _ZN3Lot11setCarsSizeEi called 0 returned 0% blocks executed 0%
+    #####:  110:void Lot::setCarsSize(int size){
+    #####:  111:    carsSize = size;
+    #####:  112:}
+function _ZN3Lot11getCarsSizeEv called 12 returned 100% blocks executed 100%
+       12:  113:int Lot::getCarsSize(){
+       12:  114:    return carsSize;
+       12:  114-block  0
+        -:  115:}
+function _ZN3Lot10isParkableENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_i called 11 returned 100% blocks executed 54%
+       11:  116:bool Lot::isParkable(string loc, string typ, int plate){
+        -:  117:    //we first find the specified row and col from the first char
+       11:  118:    int row = -1;
+       11:  119:    int col = -1;
+       11:  120:    string target = loc.substr(1);
+       11:  120-block  0
+call    0 returned 11
+branch  1 taken 11 (fallthrough)
+branch  2 taken 0 (throw)
+       11:  121:    istringstream(target) >> col;
+       11:  121-block  0
+call    0 returned 11
+branch  1 taken 11 (fallthrough)
+branch  2 taken 0 (throw)
+       11:  121-block  1
+call    3 returned 11
+branch  4 taken 11 (fallthrough)
+branch  5 taken 0 (throw)
+       11:  121-block  2
+call    6 returned 11
+    $$$$$:  121-block  3
+call    7 never executed
+    $$$$$:  121-block  4
+       11:  122:    col--;
+       11:  123:    row = (int)(loc[0]) - 65;
+call    0 returned 11
+branch  1 taken 11 (fallthrough)
+branch  2 taken 0 (throw)
+       11:  124:    if(row >= 0 && col >= 0 && row < lotDsize1 && col < lotDsize2){
+       11:  124-block  0
+branch  0 taken 11 (fallthrough)
+branch  1 taken 0
+       11:  124-block  1
+branch  2 taken 11 (fallthrough)
+branch  3 taken 0
+       11:  124-block  2
+branch  4 taken 11 (fallthrough)
+branch  5 taken 0
+       11:  124-block  3
+branch  6 taken 11 (fallthrough)
+branch  7 taken 0
+       11:  125:        if(std::equal(typ.begin(), typ.end(),"a")){
+       11:  125-block  0
+call    0 returned 11
+call    1 returned 11
+call    2 returned 11
+branch  3 taken 11 (fallthrough)
+branch  4 taken 0 (throw)
+       11:  125-block  1
+branch  5 taken 6 (fallthrough)
+branch  6 taken 5
+        -:  126:            //we check for total emptyness
+        6:  127:            if(emptySpaces == lotDsize1 * lotDsize2){
+        6:  127-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 5
+        1:  128:                carsSize = 0;
+        1:  129:                return true;
+        1:  129-block  0
+        -:  130:            }
+        -:  131:            //check location emptyness for a type car
+        5:  132:            bool empty = true;
+        5:  133:            if(isCarThere(row,col) != -1){
+        5:  133-block  0
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+        5:  133-block  1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 4
+        1:  134:                empty = false;
+        1:  134-block  0
+        -:  135:            }
+        -:  136:            //if empty we check the plate num
+        5:  137:            if(empty){
+        5:  137-block  0
+branch  0 taken 4 (fallthrough)
+branch  1 taken 1
+       10:  138:                for(int i = 0; i < carsSize; i++){
+        4:  138-block  0
+        6:  138-block  1
+       10:  138-block  2
+branch  0 taken 6
+branch  1 taken 4 (fallthrough)
+        6:  139:                    if(plate == (*cars[i]).getPlateNum()){
+        6:  139-block  0
+call    0 returned 6
+branch  1 taken 6 (fallthrough)
+branch  2 taken 0 (throw)
+        6:  139-block  1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 6
+    #####:  140:                        empty = false;
+    %%%%%:  140-block  0
+        -:  141:                    }
+        -:  142:                }
+        4:  143:                if(!empty){
+        4:  143-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 4
+    #####:  144:                    cout << "Cannot park light-duty car with number plate ";
+    %%%%%:  144-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  145:                    cout << plate << " at location " << loc << ", a car with same plate number exists" << endl;
+    %%%%%:  145-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  145-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  145-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  145-block  3
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    %%%%%:  145-block  4
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+        -:  146:                }
+        -:  147:            }
+        -:  148:            else{
+        1:  149:                cout << "Cannot park light-duty car with number plate ";
+        1:  149-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  150:                cout << plate << " at location " << loc << ", already occupied" << endl;
+        1:  150-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  150-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  150-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  150-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  150-block  4
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        -:  151:            }
+        5:  152:            return empty;
+        5:  152-block  0
+        -:  153:        }
+        5:  154:        else if(equal(typ.begin(), typ.end(),"b")){
+        5:  154-block  0
+call    0 returned 5
+call    1 returned 5
+call    2 returned 5
+branch  3 taken 5 (fallthrough)
+branch  4 taken 0 (throw)
+        5:  154-block  1
+branch  5 taken 5 (fallthrough)
+branch  6 taken 0
+        5:  155:            if(row > 0){//we check for total emptyness
+        5:  155-block  0
+branch  0 taken 4 (fallthrough)
+branch  1 taken 1
+        4:  156:                if(emptySpaces == lotDsize1 * lotDsize2){
+        4:  156-block  0
+branch  0 taken 2 (fallthrough)
+branch  1 taken 2
+        2:  157:                    carsSize = 0;
+        2:  158:                    return true;
+        2:  158-block  0
+        -:  159:                }
+        -:  160:                //check locations with this and previous row for b type car
+        2:  161:                bool empty = true;
+        2:  162:                if(isCarThere(row,col) != -1){
+        2:  162-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  162-block  1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 2
+    #####:  163:                    empty = false;
+    %%%%%:  163-block  0
+        -:  164:                }
+        2:  165:                if(empty){
+        2:  165-block  0
+branch  0 taken 2 (fallthrough)
+branch  1 taken 0
+        6:  166:                    for(int i = 0; i < carsSize; i++){
+        2:  166-block  0
+        4:  166-block  1
+        6:  166-block  2
+branch  0 taken 4
+branch  1 taken 2 (fallthrough)
+        4:  167:                        if(plate == (*cars[i]).getPlateNum()){
+        4:  167-block  0
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+        4:  167-block  1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 4
+    #####:  168:                            empty = false;
+    %%%%%:  168-block  0
+        -:  169:                        }
+        -:  170:                    }
+        2:  171:                    if(!empty){
+        2:  171-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 2
+    #####:  172:                        cout << "Cannot park heavy-duty car with number plate ";
+    %%%%%:  172-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  173:                        cout << plate << " at location " << loc << ", a car with same plate number exists" << endl;
+    %%%%%:  173-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  173-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  173-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  173-block  3
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    %%%%%:  173-block  4
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+        -:  174:                    }
+        -:  175:                }
+        -:  176:                else{
+    #####:  177:                    cout << "Cannot park heavy-duty car with number plate ";
+    %%%%%:  177-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  178:                    cout << plate << " at location " << loc << ", already occupied" << endl;
+    %%%%%:  178-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  178-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  178-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  178-block  3
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    %%%%%:  178-block  4
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+        -:  179:                }
+        2:  180:                return empty;}
+        2:  180-block  0
+        -:  181:            else{
+        1:  182:                cout << "Cannot park heavy-duty car with number plate ";
+        1:  182-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  183:                cout << plate << " at location " << loc << ", not enough space" << endl;
+        1:  183-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  183-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  183-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  183-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  183-block  4
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        -:  184:            }
+        -:  185:        }
+        -:  186:        else{
+    #####:  187:            cout << "Cannot park invalid car type with number plate ";
+    %%%%%:  187-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  188:            cout << plate << " at location " << loc << endl;
+    %%%%%:  188-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  188-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  188-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  188-block  3
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+        -:  189:
+        -:  190:        }
+        1:  191:        return false;
+        1:  191-block  0
+        -:  192:    }
+        -:  193:    else{
+    #####:  194:        if(equal(typ.begin(), typ.end(),"a")){
+    %%%%%:  194-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    %%%%%:  194-block  1
+branch  5 never executed
+branch  6 never executed
+    #####:  195:            cout << "Cannot park light-duty car with number plate ";
+    %%%%%:  195-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  196:            cout << plate << " at location " << loc << ", out of bounds" << endl;
+    %%%%%:  196-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  196-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  196-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  196-block  3
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    %%%%%:  196-block  4
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+        -:  197:        }
+    #####:  198:        else if(equal(typ.begin(), typ.end(),"b")){
+    %%%%%:  198-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    %%%%%:  198-block  1
+branch  5 never executed
+branch  6 never executed
+    #####:  199:            cout << "Cannot park heavy-duty car with number plate ";
+    %%%%%:  199-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  200:            cout << plate << " at location " << loc << ", out of bounds" << endl;
+    %%%%%:  200-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  200-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  200-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  200-block  3
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    %%%%%:  200-block  4
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+        -:  201:        }
+        -:  202:    }
+    #####:  203:    return false;
+    %%%%%:  203-block  0
+       11:  204:}
+       11:  204-block  0
+call    0 returned 11
+    $$$$$:  204-block  1
+call    1 never executed
+function _ZN3Lot6addCarENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_i called 11 returned 100% blocks executed 74%
+       11:  205:void Lot::addCar(string loc, string typ, int plate){
+       11:  206:    if(isParkable(loc,typ,plate)){
+       11:  206-block  0
+call    0 returned 11
+call    1 returned 11
+branch  2 taken 11 (fallthrough)
+branch  3 taken 0 (throw)
+       11:  206-block  1
+call    4 returned 11
+branch  5 taken 11 (fallthrough)
+branch  6 taken 0 (throw)
+       11:  206-block  2
+call    7 returned 11
+call    8 returned 11
+branch  9 taken 9 (fallthrough)
+branch 10 taken 2
+    $$$$$:  206-block  3
+call   11 never executed
+    $$$$$:  206-block  4
+    $$$$$:  206-block  5
+call   12 never executed
+    $$$$$:  206-block  6
+call   13 never executed
+        9:  207:        Car** carr = cars;
+       9*:  208:        cars = new Car*[carsSize+1];
+        9:  208-block  0
+branch  0 taken 9 (fallthrough)
+branch  1 taken 0
+        9:  208-block  1
+    %%%%%:  208-block  2
+call    2 never executed
+        9:  208-block  3
+call    3 returned 9
+       19:  209:        for(int i = 0; i < carsSize; i++){
+       19:  209-block  0
+branch  0 taken 10
+branch  1 taken 9 (fallthrough)
+       10:  210:            cars[i] = carr[i];
+       10:  210-block  0
+        -:  211:        }
+        9:  212:        delete[] carr;
+        9:  212-block  0
+branch  0 taken 6 (fallthrough)
+branch  1 taken 3
+        6:  212-block  1
+call    2 returned 6
+        9:  213:        cars[carsSize] = new Car(loc,typ,plate);
+        9:  213-block  0
+call    0 returned 9
+call    1 returned 9
+branch  2 taken 9 (fallthrough)
+branch  3 taken 0 (throw)
+        9:  213-block  1
+call    4 returned 9
+branch  5 taken 9 (fallthrough)
+branch  6 taken 0 (throw)
+        9:  213-block  2
+call    7 returned 9
+branch  8 taken 9 (fallthrough)
+branch  9 taken 0 (throw)
+        9:  213-block  3
+call   10 returned 9
+call   11 returned 9
+    $$$$$:  213-block  4
+call   12 never executed
+    $$$$$:  213-block  5
+call   13 never executed
+    $$$$$:  213-block  6
+    $$$$$:  213-block  7
+call   14 never executed
+        9:  214:        carsSize++;
+        9:  215:        if(equal(typ.begin(), typ.end(),"a")){
+call    0 returned 9
+call    1 returned 9
+call    2 returned 9
+branch  3 taken 5 (fallthrough)
+branch  4 taken 4
+        5:  216:            emptySpaces--;
+        5:  217:            cout << "Light-duty car with number plate " << plate;
+        5:  217-block  0
+call    0 returned 5
+call    1 returned 5
+        5:  218:            cout << " has been parked at location " << loc << ", lot " << id << endl;
+call    0 returned 5
+call    1 returned 5
+call    2 returned 5
+call    3 returned 5
+call    4 returned 5
+        -:  219:        }
+        -:  220:        else{
+        4:  221:            emptySpaces-=2;
+        4:  222:            cout << "Heavy-duty car with number plate " << plate;
+        4:  222-block  0
+call    0 returned 4
+call    1 returned 4
+        4:  223:            cout << " has been parked at location " << loc << ", lot " << id << endl;
+call    0 returned 4
+call    1 returned 4
+call    2 returned 4
+call    3 returned 4
+call    4 returned 4
+        -:  224:        }
+        -:  225:    }
+       11:  226:}
+       11:  226-block  0
+function _ZN3Lot10isCarThereEii called 7 returned 100% blocks executed 85%
+        7:  227:int Lot::isCarThere(int r, int c){
+        7:  228:    int val = -1;
+       18:  229:    for(int i = 0; i < carsSize; i++){
+        7:  229-block  0
+       11:  229-block  1
+       18:  229-block  2
+branch  0 taken 12
+branch  1 taken 6 (fallthrough)
+       12:  230:        if(!(*cars[i]).getType().compare("a")){
+       12:  230-block  0
+call    0 returned 12
+call    1 returned 12
+call    2 returned 12
+branch  3 taken 6 (fallthrough)
+branch  4 taken 6
+       6*:  231:            if(r == (*cars[i]).getRow() && c == (*cars[i]).getCol()){
+        6:  231-block  0
+call    0 returned 6
+branch  1 taken 0 (fallthrough)
+branch  2 taken 6
+    %%%%%:  231-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  231-block  2
+        6:  231-block  3
+        6:  231-block  4
+branch  6 taken 0 (fallthrough)
+branch  7 taken 6
+    #####:  232:                val = i;
+    #####:  233:                break;
+    %%%%%:  233-block  0
+        -:  234:            }
+        -:  235:        }
+        6:  236:        else if((r == (*cars[i]).getRow() || r == (*cars[i]).getRow()-1) && c == (*cars[i]).getCol()){
+        6:  236-block  0
+call    0 returned 6
+branch  1 taken 6 (fallthrough)
+branch  2 taken 0
+        6:  236-block  1
+call    3 returned 6
+branch  4 taken 1 (fallthrough)
+branch  5 taken 5
+        1:  236-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0
+        1:  236-block  3
+        5:  236-block  4
+        6:  236-block  5
+branch  9 taken 1 (fallthrough)
+branch 10 taken 5
+        1:  237:            val = i;
+        1:  238:            break;
+        1:  238-block  0
+        -:  239:        }
+        -:  240:
+        -:  241:    }
+        7:  242:    return val;
+        7:  242-block  0
+        -:  243:}
+function _ZN3Lot9carToDrawEii called 316 returned 100% blocks executed 100%
+      316:  244:int Lot::carToDraw(int r, int c){
+      316:  245:    int val = -1;
+     1009:  246:    for(int i = 0; i < carsSize; i++){
+      316:  246-block  0
+      693:  246-block  1
+     1009:  246-block  2
+branch  0 taken 702
+branch  1 taken 307 (fallthrough)
+      702:  247:        if(!(*cars[i]).getType().compare("a")){
+      702:  247-block  0
+call    0 returned 702
+call    1 returned 702
+call    2 returned 702
+branch  3 taken 422 (fallthrough)
+branch  4 taken 280
+      422:  248:            if(r == (*cars[i]).getRow() && c == (*cars[i]).getCol()){
+      422:  248-block  0
+call    0 returned 422
+branch  1 taken 45 (fallthrough)
+branch  2 taken 377
+       45:  248-block  1
+call    3 returned 45
+branch  4 taken 5 (fallthrough)
+branch  5 taken 40
+        5:  248-block  2
+      417:  248-block  3
+      422:  248-block  4
+branch  6 taken 5 (fallthrough)
+branch  7 taken 417
+        5:  249:                val = i;
+        5:  250:                break;
+        5:  250-block  0
+        -:  251:            }
+        -:  252:        }
+      280:  253:        else if(r == (*cars[i]).getRow()  && c == (*cars[i]).getCol()){
+      280:  253-block  0
+call    0 returned 280
+branch  1 taken 33 (fallthrough)
+branch  2 taken 247
+       33:  253-block  1
+call    3 returned 33
+branch  4 taken 4 (fallthrough)
+branch  5 taken 29
+        4:  253-block  2
+      276:  253-block  3
+      280:  253-block  4
+branch  6 taken 4 (fallthrough)
+branch  7 taken 276
+        4:  254:            val = i;
+        4:  255:            break;
+        4:  255-block  0
+        -:  256:        }
+        -:  257:    }
+      316:  258:    return val;
+      316:  258-block  0
+        -:  259:}
+function _ZN3Lot14displayContentEv called 4 returned 100% blocks executed 100%
+        4:  260:void Lot::displayContent(){
+        4:  261:    cout<<"ID: "<<id<<", ("<<lotDsize1<<","<<lotDsize2<<"), empty slots: "<<emptySpaces;
+        4:  261-block  0
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+        4:  261-block  1
+call    3 returned 4
+branch  4 taken 4 (fallthrough)
+branch  5 taken 0 (throw)
+        4:  261-block  2
+call    6 returned 4
+branch  7 taken 4 (fallthrough)
+branch  8 taken 0 (throw)
+        4:  261-block  3
+call    9 returned 4
+branch 10 taken 4 (fallthrough)
+branch 11 taken 0 (throw)
+        4:  261-block  4
+call   12 returned 4
+branch 13 taken 4 (fallthrough)
+branch 14 taken 0 (throw)
+        4:  261-block  5
+call   15 returned 4
+branch 16 taken 4 (fallthrough)
+branch 17 taken 0 (throw)
+        4:  261-block  6
+call   18 returned 4
+branch 19 taken 4 (fallthrough)
+branch 20 taken 0 (throw)
+        4:  262:    cout<<", parked cars: ";
+        4:  262-block  0
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+        4:  263:    if(carsSize > 0){
+        4:  263-block  0
+branch  0 taken 3 (fallthrough)
+branch  1 taken 1
+        3:  264:        cout<<(*cars[0]).getPlateNum();
+        3:  264-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:  264-block  1
+call    3 returned 3
+branch  4 taken 3 (fallthrough)
+branch  5 taken 0 (throw)
+        9:  265:        for(int i = 1; i < carsSize; i++){
+        3:  265-block  0
+        6:  265-block  1
+        9:  265-block  2
+branch  0 taken 6
+branch  1 taken 3
+        6:  266:            cout<<", "<<(*cars[i]).getPlateNum();
+        6:  266-block  0
+call    0 returned 6
+branch  1 taken 6 (fallthrough)
+branch  2 taken 0 (throw)
+        6:  266-block  1
+call    3 returned 6
+branch  4 taken 6 (fallthrough)
+branch  5 taken 0 (throw)
+        6:  266-block  2
+call    6 returned 6
+branch  7 taken 6 (fallthrough)
+branch  8 taken 0 (throw)
+        -:  267:        }
+        -:  268:    }
+        -:  269:    else{
+        1:  270:        cout<<"no cars yet";
+        1:  270-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  271:    }
+        4:  272:    cout<<endl<<endl;
+        4:  272-block  0
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+        4:  272-block  1
+call    3 returned 4
+branch  4 taken 4 (fallthrough)
+branch  5 taken 0 (throw)
+        -:  273:    //we fill the char array
+        4:  274:    char carlot[lotDsize1][lotDsize2];
+       38:  275:    for(int i = 0; i < lotDsize1; i++){
+        4:  275-block  0
+       34:  275-block  1
+       38:  275-block  2
+branch  0 taken 34
+branch  1 taken 4 (fallthrough)
+      350:  276:        for(int j = 0; j < lotDsize2; j++){
+       34:  276-block  0
+      316:  276-block  1
+      350:  276-block  2
+branch  0 taken 316
+branch  1 taken 34 (fallthrough)
+      316:  277:            int index = carToDraw(i,j);
+      316:  277-block  0
+call    0 returned 316
+branch  1 taken 316 (fallthrough)
+branch  2 taken 0 (throw)
+      316:  278:            if(index != -1){
+      316:  278-block  0
+branch  0 taken 9 (fallthrough)
+branch  1 taken 307
+        9:  279:                if(!(*cars[index]).getType().compare("b")){
+        9:  279-block  0
+call    0 returned 9
+branch  1 taken 9 (fallthrough)
+branch  2 taken 0 (throw)
+        9:  279-block  1
+call    3 returned 9
+call    4 returned 9
+branch  5 taken 4 (fallthrough)
+branch  6 taken 5
+        4:  280:                    carlot[i-1][j] = 'b';
+        4:  281:                    carlot[i][j] = 'b';
+        4:  281-block  0
+        -:  282:                }
+        -:  283:                else{
+        5:  284:                    carlot[i][j] = 'a';
+        5:  284-block  0
+        -:  285:                }
+        -:  286:            }
+        -:  287:            else{
+        -:  288:                //can't access this as well
+      307:  289:                carlot[i][j] = '+';
+      307:  289-block  0
+        -:  290:            }
+        -:  291:        }
+        -:  292:    }
+        -:  293:    //printing
+        4:  294:    cout<<" ";
+        4:  294-block  0
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+       39:  295:    for(int i = 1; i <= lotDsize2; i++)
+        4:  295-block  0
+       35:  295-block  1
+       39:  295-block  2
+branch  0 taken 35
+branch  1 taken 4 (fallthrough)
+       35:  296:        cout<<" "<<i;
+       35:  296-block  0
+call    0 returned 35
+branch  1 taken 35 (fallthrough)
+branch  2 taken 0 (throw)
+       35:  296-block  1
+call    3 returned 35
+branch  4 taken 35 (fallthrough)
+branch  5 taken 0 (throw)
+        4:  297:    cout<<endl;
+        4:  297-block  0
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+        4:  298:    char letter = 65;
+       38:  299:    for(int i = 0; i < lotDsize1; i++){
+        4:  299-block  0
+       34:  299-block  1
+       38:  299-block  2
+branch  0 taken 34
+branch  1 taken 4 (fallthrough)
+       34:  300:        cout<<letter;
+       34:  300-block  0
+call    0 returned 34
+branch  1 taken 34 (fallthrough)
+branch  2 taken 0 (throw)
+      350:  301:        for(int j = 0; j < lotDsize2; j++){
+       34:  301-block  0
+      316:  301-block  1
+      350:  301-block  2
+branch  0 taken 316
+branch  1 taken 34 (fallthrough)
+      316:  302:            cout<<" "<<carlot[i][j];
+      316:  302-block  0
+call    0 returned 316
+branch  1 taken 316 (fallthrough)
+branch  2 taken 0 (throw)
+      316:  302-block  1
+call    3 returned 316
+branch  4 taken 316 (fallthrough)
+branch  5 taken 0 (throw)
+      316:  303:            if(j > 8){
+      316:  303-block  0
+branch  0 taken 36 (fallthrough)
+branch  1 taken 280
+       36:  304:                cout<<" ";
+       36:  304-block  0
+call    0 returned 36
+branch  1 taken 36 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  305:            }
+        -:  306:        }
+       34:  307:        letter++;
+       34:  308:        cout<<endl;
+       34:  308-block  0
+call    0 returned 34
+branch  1 taken 34 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  309:    }
+        8:  310:}
+        4:  310-block  0
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+        4:  310-block  1
+        -:  311:

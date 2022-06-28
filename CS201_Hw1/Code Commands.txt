@@ -1,0 +1,7 @@
+ssh oguz.akin@dijkstra.ug.bcc.bilkent.edu.tr
+enter password, you wont see it
+g++ main.cpp -o my_program
+ls //this lists the files
+./my_program
+g++ main.cpp -g -o my_program
+valgrind --tool=memcheck --leak-check=yes ./my_program

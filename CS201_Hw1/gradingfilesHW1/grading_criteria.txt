@@ -1,0 +1,15 @@
+Create Lot: 10 points
+Remove Lot: 15 points 
+List Lots: 10 points
+Lot Contents: 15 points
+Park Car: 20 points
+Find Car: 10 points
+Remove Car: 20 points 
+
+
+Penalties: 
+Late Submission: 25% of the final grade
+Memory Error (Core dump or memory leak): -15 points
+Wrong compiler: -5 points
+Grossly wrong submission format to a point where we have to change main.cpp to nake your code work: up to -10 points 
+Code not compiling. If we have to make changes to make it compile: up to -10 points 

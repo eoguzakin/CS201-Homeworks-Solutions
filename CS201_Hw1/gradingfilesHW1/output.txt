@@ -1,0 +1,136 @@
+No lots to list
+
+Testing add parking lots
+
+Parking lot with ID 376 and dimensions (8,6) has been added to the system
+Parking lot with ID 424 and dimensions (12,12) has been added to the system
+Parking lot with ID 333 and dimensions (5,6) has been added to the system
+
+Cannot create the parking lot 333, a lot with this ID already exists    
+Cannot create the parking lot 212, dimensions exceed acceptable bounds
+Cannot create the parking lot 424, dimensions exceed acceptable bounds (or Cannot create the parking lot 424, a lot with this ID already exists)
+
+Parking lot with ID 467 and dimensions (6,6) has been added to the system
+Parking lot with ID 555 and dimensions (9,7) has been added to the system
+
+List of lots:
+ID: 376, Dim: (8,6), number of empty parking spaces: 48
+ID: 424, Dim: (12,12), number of empty parking spaces: 144
+ID: 333, Dim: (5,6), number of empty parking spaces: 30
+ID: 467, Dim: (6,6), number of empty parking spaces: 36
+ID: 555, Dim: (9,7), number of empty parking spaces: 63
+
+
+Testing remove parking lot
+
+Lot 424 has been successfully removed from the system
+Lot 999 is not in the system
+Lot 333 has been successfully removed from the system
+
+Lot 135 is not in the system
+Parking lot with ID 111 and dimensions (6,7) has been added to the system
+
+
+Testing park a car
+
+Heavy-duty car with number plate 711 has been parked at location B5, lot 376
+Light-duty car with number plate 171 has been parked at location E1, lot 376
+Heavy-duty car with number plate 188 has been parked at location C3, lot 376
+
+Light-duty car with number plate 200 has been parked at location F3, lot 376
+Heavy-duty car with number plate 888 has been parked at location G1, lot 376
+Heavy-duty car with number plate 734 has been parked at location B4, lot 467
+Light-duty car with number plate 900 has been parked at location C4, lot 467
+
+Lot 477 is not in the system
+Light-duty car with number plate 170 has been parked at location C3, lot 467
+Lot 466 is not in the system
+
+Light-duty car with number plate 434 has been parked at location B1, lot 111
+Heavy-duty car with number plate 589 has been parked at location B4, lot 111
+Cannot park Heavy-duty car with number plate 360 at location C4, not enough space
+
+List of lots:
+ID: 376, Dim: (8,6), number of empty parking spaces: 40
+ID: 467, Dim: (6,6), number of empty parking spaces: 32
+ID: 555, Dim: (9,7), number of empty parking spaces: 63
+ID: 111, Dim: (6,7), number of empty parking spaces: 39
+
+
+Testing find a car
+
+Heavy-duty car with plate number 711 is at location B5, lot 376
+Light-duty car with plate number 900 is at location C4, lot 467
+Heavy-duty car with plate number 589 is at location B4, lot 111
+
+Light-duty car with plate number 434 is at location B1, lot 111
+The car with number plate 360 is not in the system
+The car with number plate 557 is not in the system
+
+
+Testing show lot contents
+
+ID: 376, (8,6), empty slots: 40, parked cars: 711, 188, 171, 200, 888
+
+   1 2 3 4 5 6
+A  + + + + b +
+B  + + b + b +
+C  + + b + + +
+D  + + + + + +
+E  a + + + + +
+F  b + a + + +
+G  b + + + + +
+H  + + + + + +
+
+ID: 467, (6,6), empty slots: 32, parked cars: 734, 170, 900
+
+   1 2 3 4 5 6
+A  + + + b + +
+B  + + + b + +
+C  + + a a + +
+D  + + + + + +
+E  + + + + + +
+F  + + + + + +
+
+ID: 555, (9,7), empty slots: 63, parked cars: no cars yet
+
+   1 2 3 4 5 6 7
+A  + + + + + + +
+B  + + + + + + +
+C  + + + + + + +
+D  + + + + + + +
+E  + + + + + + +
+F  + + + + + + +
+G  + + + + + + +
+H  + + + + + + +
+I  + + + + + + +
+
+ID: 111, (6,7), empty slots: 39, parked cars: 434, 589
+
+   1 2 3 4 5 6 7
+A  + + + b + + +
+B  a + + b + + +
+C  + + + + + + +
+D  + + + + + + +
+E  + + + + + + +
+F  + + + + + + +
+
+
+Testing remove car
+
+Light-duty car with number plate 900 car has been removed from slot C4, lot 467
+Heavy-duty car with number plate 589 car has been removed from slot B4, lot 111
+
+Light-duty car with number plate 170 car has been removed from slot C3, lot 467
+The car with number plate 177 is not in the system
+The car with number plate 557 is not in the system
+
+Testing remove car, again, this time with cars in the lot
+Notice how first cars are deleted
+
+Heavy-duty car with number plate 711 car has been removed from slot B5, lot 376
+Heavy-duty car with number plate 188 car has been removed from slot C3, lot 376
+Light-duty car with number plate 171 car has been removed from slot E1, lot 376
+Light-duty car with number plate 200 car has been removed from slot F3, lot 376
+Heavy-duty car with number plate 888 car has been removed from slot G1, lot 376
+Lot 376 has been successfully removed from the system.

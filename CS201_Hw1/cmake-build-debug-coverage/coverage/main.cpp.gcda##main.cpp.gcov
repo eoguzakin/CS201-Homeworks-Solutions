@@ -1,0 +1,826 @@
+        -:    0:Source:C:/Users/Asus/Desktop/C++ Codes/CS201_Hw1/src/main.cpp
+        -:    0:Graph:C:\Users\Asus\Desktop\C++ Codes\CS201_Hw1\cmake-build-debug-coverage\CMakeFiles\CS201_Hw1.dir\src\main.cpp.gcno
+        -:    0:Data:C:\Users\Asus\Desktop\C++ Codes\CS201_Hw1\cmake-build-debug-coverage\CMakeFiles\CS201_Hw1.dir\src\main.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include <iostream>
+        -:    2:using namespace std;
+        -:    3:#include "ParkingSystem.h"
+function main called 1 returned 100% blocks executed 56%
+        1:    4:int main(){
+        1:    5:    ParkingSystem L;
+        1:    5-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:    6:    L.listLots();
+        1:    6-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:    7:    // Testing add parking lot
+        1:    8:    cout << endl;
+        1:    8-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:    9:    cout << "Testing add parking lots" << endl;
+        1:    9-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:    9-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   10:    cout << endl;
+        1:   10-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   11:    L.createLot(980, 7, 7);
+        1:   11-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   12:    L.createLot(666, 6, 11);
+        1:   12-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   13:    L.createLot(222, 12, 12);
+        1:   13-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   14:    cout << endl;
+        1:   14-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   15:    L.createLot(434, 13, 3);
+        1:   15-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   16:    L.createLot(222, 5, 4);
+        1:   16-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   17:    L.createLot(301, 9, 9);
+        1:   17-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   18:    cout << endl;
+        1:   18-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   19:    L.createLot(301, 19, 3);
+        1:   19-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   20:    L.createLot(205, 4, 4);
+        1:   20-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   21:    cout << endl;
+        1:   21-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   22:    L.listLots();
+        1:   22-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   23:    cout << endl;
+        1:   23-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   24:    // Testing remove parking lot
+        1:   25:    cout << endl;
+        1:   25-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   26:    cout << "Testing remove parking lot" << endl;
+        1:   26-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   26-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   27:    cout << endl;
+        1:   27-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   28:    L.removeLot(666);
+        1:   28-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   29:    L.removeLot(101);
+        1:   29-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   30:    L.removeLot(205);
+        1:   30-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   31:    cout << endl;
+        1:   31-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   32:    L.createLot(743, 6, 7);
+        1:   32-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   33:    cout << endl;
+        1:   33-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   34:    // Testing park car
+        1:   35:    cout << endl;
+        1:   35-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   36:    cout << "Testing park a car" << endl;
+        1:   36-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   36-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   37:    cout << endl;
+        1:   37-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   38:    L.parkCar( 980, "C3", "b", 211);
+        1:   38-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   38-block  1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   38-block  2
+call    8 returned 1
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0 (throw)
+        1:   38-block  3
+call   11 returned 1
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:   38-block  4
+call   15 never executed
+    $$$$$:   38-block  5
+    $$$$$:   38-block  6
+call   16 never executed
+    $$$$$:   38-block  7
+    $$$$$:   38-block  8
+call   17 never executed
+    $$$$$:   38-block  9
+    $$$$$:   38-block 10
+call   18 never executed
+    $$$$$:   38-block 11
+        1:   39:    L.parkCar( 980, "E5", "a", 141);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   39-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   39-block  1
+call    8 returned 1
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0 (throw)
+        1:   39-block  2
+call   11 returned 1
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:   39-block  3
+call   15 never executed
+    $$$$$:   39-block  4
+    $$$$$:   39-block  5
+call   16 never executed
+    $$$$$:   39-block  6
+    $$$$$:   39-block  7
+call   17 never executed
+    $$$$$:   39-block  8
+    $$$$$:   39-block  9
+call   18 never executed
+    $$$$$:   39-block 10
+        1:   40:    L.parkCar( 980, "A3", "b", 199);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   40-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   40-block  1
+call    8 returned 1
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0 (throw)
+        1:   40-block  2
+call   11 returned 1
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:   40-block  3
+call   15 never executed
+    $$$$$:   40-block  4
+    $$$$$:   40-block  5
+call   16 never executed
+    $$$$$:   40-block  6
+    $$$$$:   40-block  7
+call   17 never executed
+    $$$$$:   40-block  8
+    $$$$$:   40-block  9
+call   18 never executed
+    $$$$$:   40-block 10
+        1:   41:    cout << endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   42:    L.parkCar( 980, "A3", "a", 199);
+        1:   42-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   42-block  1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   42-block  2
+call    8 returned 1
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0 (throw)
+        1:   42-block  3
+call   11 returned 1
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:   42-block  4
+call   15 never executed
+    $$$$$:   42-block  5
+    $$$$$:   42-block  6
+call   16 never executed
+    $$$$$:   42-block  7
+    $$$$$:   42-block  8
+call   17 never executed
+    $$$$$:   42-block  9
+    $$$$$:   42-block 10
+call   18 never executed
+    $$$$$:   42-block 11
+        1:   43:    L.parkCar( 980, "G1", "b", 888);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   43-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   43-block  1
+call    8 returned 1
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0 (throw)
+        1:   43-block  2
+call   11 returned 1
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:   43-block  3
+call   15 never executed
+    $$$$$:   43-block  4
+    $$$$$:   43-block  5
+call   16 never executed
+    $$$$$:   43-block  6
+    $$$$$:   43-block  7
+call   17 never executed
+    $$$$$:   43-block  8
+    $$$$$:   43-block  9
+call   18 never executed
+    $$$$$:   43-block 10
+        1:   44:    L.parkCar( 222, "G7", "b", 200);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   44-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   44-block  1
+call    8 returned 1
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0 (throw)
+        1:   44-block  2
+call   11 returned 1
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:   44-block  3
+call   15 never executed
+    $$$$$:   44-block  4
+    $$$$$:   44-block  5
+call   16 never executed
+    $$$$$:   44-block  6
+    $$$$$:   44-block  7
+call   17 never executed
+    $$$$$:   44-block  8
+    $$$$$:   44-block  9
+call   18 never executed
+    $$$$$:   44-block 10
+        1:   45:    L.parkCar( 222, "B2", "a", 156);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   45-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   45-block  1
+call    8 returned 1
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0 (throw)
+        1:   45-block  2
+call   11 returned 1
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:   45-block  3
+call   15 never executed
+    $$$$$:   45-block  4
+    $$$$$:   45-block  5
+call   16 never executed
+    $$$$$:   45-block  6
+    $$$$$:   45-block  7
+call   17 never executed
+    $$$$$:   45-block  8
+    $$$$$:   45-block  9
+call   18 never executed
+    $$$$$:   45-block 10
+        1:   46:    cout << endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   47:    L.parkCar( 221, "C3", "a", 177);
+        1:   47-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   47-block  1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   47-block  2
+call    8 returned 1
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0 (throw)
+        1:   47-block  3
+call   11 returned 1
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:   47-block  4
+call   15 never executed
+    $$$$$:   47-block  5
+    $$$$$:   47-block  6
+call   16 never executed
+    $$$$$:   47-block  7
+    $$$$$:   47-block  8
+call   17 never executed
+    $$$$$:   47-block  9
+    $$$$$:   47-block 10
+call   18 never executed
+    $$$$$:   47-block 11
+        1:   48:    L.parkCar( 222, "C3", "a", 177);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   48-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   48-block  1
+call    8 returned 1
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0 (throw)
+        1:   48-block  2
+call   11 returned 1
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:   48-block  3
+call   15 never executed
+    $$$$$:   48-block  4
+    $$$$$:   48-block  5
+call   16 never executed
+    $$$$$:   48-block  6
+    $$$$$:   48-block  7
+call   17 never executed
+    $$$$$:   48-block  8
+    $$$$$:   48-block  9
+call   18 never executed
+    $$$$$:   48-block 10
+        1:   49:    L.parkCar( 223, "C3", "b", 177);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   49-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   49-block  1
+call    8 returned 1
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0 (throw)
+        1:   49-block  2
+call   11 returned 1
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:   49-block  3
+call   15 never executed
+    $$$$$:   49-block  4
+    $$$$$:   49-block  5
+call   16 never executed
+    $$$$$:   49-block  6
+    $$$$$:   49-block  7
+call   17 never executed
+    $$$$$:   49-block  8
+    $$$$$:   49-block  9
+call   18 never executed
+    $$$$$:   49-block 10
+        1:   50:    cout << endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   51:    L.parkCar( 743, "A1", "a", 256);
+        1:   51-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   51-block  1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   51-block  2
+call    8 returned 1
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0 (throw)
+        1:   51-block  3
+call   11 returned 1
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:   51-block  4
+call   15 never executed
+    $$$$$:   51-block  5
+    $$$$$:   51-block  6
+call   16 never executed
+    $$$$$:   51-block  7
+    $$$$$:   51-block  8
+call   17 never executed
+    $$$$$:   51-block  9
+    $$$$$:   51-block 10
+call   18 never executed
+    $$$$$:   51-block 11
+        1:   52:    L.parkCar( 743, "C4", "b", 159);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   52-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   52-block  1
+call    8 returned 1
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0 (throw)
+        1:   52-block  2
+call   11 returned 1
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:   52-block  3
+call   15 never executed
+    $$$$$:   52-block  4
+    $$$$$:   52-block  5
+call   16 never executed
+    $$$$$:   52-block  6
+    $$$$$:   52-block  7
+call   17 never executed
+    $$$$$:   52-block  8
+    $$$$$:   52-block  9
+call   18 never executed
+    $$$$$:   52-block 10
+        1:   53:    L.parkCar( 743, "B4", "a", 120);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   53-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   53-block  1
+call    8 returned 1
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0 (throw)
+        1:   53-block  2
+call   11 returned 1
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:   53-block  3
+call   15 never executed
+    $$$$$:   53-block  4
+    $$$$$:   53-block  5
+call   16 never executed
+    $$$$$:   53-block  6
+    $$$$$:   53-block  7
+call   17 never executed
+    $$$$$:   53-block  8
+    $$$$$:   53-block  9
+call   18 never executed
+    $$$$$:   53-block 10
+        1:   54:    cout << endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   55:    L.listLots();
+        1:   55-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   56:    cout << endl;
+        1:   56-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   57:    // Testing find car
+        1:   58:    cout << endl;
+        1:   58-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   59:    cout << "Testing find a car" << endl;
+        1:   59-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   59-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   60:    cout << endl;
+        1:   60-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   61:    L.findCar(199);
+        1:   61-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   62:    L.findCar(156);
+        1:   62-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   63:    L.findCar(198);
+        1:   63-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   64:    cout << endl;
+        1:   64-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   65:    L.findCar(159);
+        1:   65-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   66:    L.findCar(100);
+        1:   66-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   67:    L.findCar(177);
+        1:   67-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   68:    cout << endl;
+        1:   68-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   69:    // Testing show lot contents
+        1:   70:    cout << endl;
+        1:   70-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   71:    cout << "Testing show lot contents" << endl;
+        1:   71-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   71-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   72:    cout << endl;
+        1:   72-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   73:    L.lotContents(980);
+        1:   73-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   74:    cout << endl;
+        1:   74-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   75:    L.lotContents(222);
+        1:   75-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   76:    cout << endl;
+        1:   76-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   77:    L.lotContents(301);
+        1:   77-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   78:    cout << endl;
+        1:   78-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   79:    L.lotContents(743);
+        1:   79-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   80:    cout << endl;
+        1:   80-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   81:    // Testing remove car
+        1:   82:    cout << endl;
+        1:   82-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   83:    cout << "Testing remove car" << endl;
+        1:   83-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   83-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   84:    cout << endl;
+        1:   84-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   85:    L.removeCar(156);
+        1:   85-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   86:    L.removeCar(177);
+        1:   86-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   87:    L.removeCar(188);
+        1:   87-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   88:    cout << endl;
+        1:   88-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   89:    L.removeCar(159);
+        1:   89-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   90:    L.removeCar(888);
+        1:   90-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   91:    L.removeCar(127);
+        1:   91-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   92:    cout << endl;
+        1:   92-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   93:    cout << "Testing remove car, again, this time with cars in the lot " << endl;
+        1:   93-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   93-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   94:    cout << "Notice how first cars are deleted " << endl;
+        1:   94-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   94-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   95:    cout << endl;//remove lot doesnt work
+        1:   95-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   96:    L.removeLot(980);
+        1:   96-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   97:    cout << endl;
+        1:   97-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   98:    return 0;
+        1:   99:}
+        1:   99-block  0
+call    0 returned 1
+    $$$$$:   99-block  1
+call    1 never executed
